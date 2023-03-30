@@ -43,7 +43,7 @@ const styles = StyleSheet.create({
   TitleFormat: {
     fontSize: 20,
     fontWeight: "bold",
-    fontFamily: "Inerit",
+    fontFamily: "Glametrix",
     padding: 10,
     margin: 10,
   },
