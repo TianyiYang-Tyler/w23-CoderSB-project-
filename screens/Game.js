@@ -10,10 +10,10 @@ export default function Game({navigation, route}) {
         <Text style={styles.TitleFormat}>Game</Text>
       </View>
       <View style={styles.BottonContainer}>
-        <Button title="Start Game" onPress={() => navigation.navigate("Game")} />
-        <Button title="Game Modes" />
-        <Button title="Personal Best" />
-        <Button title="Settings" />
+        <Button title="Game 1" onPress={() => navigation.navigate("realGame", {difficulty:1})} />
+        //<Button title="Game 2" onPress={() => navigation.navigate("realGame", {difficulty:2})} />
+        //<Button title="Game 3" onPress={() => navigation.navigate("realGame", {difficulty:3})} />
+        //<Button title="Game 4" onPress={() => navigation.navigate("realGame", {difficulty:4})} />
       </View>
     </View>
   );
@@ -41,7 +41,7 @@ const styles = StyleSheet.create({
     padding: 110,
   },
   TitleFormat: {
-    fontSize: 20,
+    fontSize: 30,
     fontWeight: "bold",
     fontFamily: "Glametrix",
     padding: 10,
