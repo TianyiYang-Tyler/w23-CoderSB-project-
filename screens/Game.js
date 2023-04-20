@@ -9,11 +9,7 @@ export default function Game({navigation, route}) {
       <View style={styles.ScreenTitle}>
         <Text style={styles.TitleFormat}>Game</Text>
       </View>
-      <View style={styles.BottonContainer}>
-        <Button title="Game 1" onPress={() => navigation.navigate("realGame", {difficulty:1})} />
-        //<Button title="Game 2" onPress={() => navigation.navigate("realGame", {difficulty:2})} />
-        //<Button title="Game 3" onPress={() => navigation.navigate("realGame", {difficulty:3})} />
-        //<Button title="Game 4" onPress={() => navigation.navigate("realGame", {difficulty:4})} />
+      <View style={styles.BottonContainer}> 
       </View>
     </View>
   );
