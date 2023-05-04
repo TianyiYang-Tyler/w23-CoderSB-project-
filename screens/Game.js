@@ -24,7 +24,7 @@ export default function HomeScreen({navigation}) {
   let acc = (timesPressed > 0) ? Math.round(score/timesPressed * 1000)/1000 : 0;
   let sum = 30;
   let cps = (sum > 0) ? Math.round(timesPressed/sum*100)/100 : 0; 
-  if (route && route.params) sum = route.params.message;
+  sum = (route && route.params > 0) ? route.params.message : 0;
 
   const Clicker = () => {
     setGo(Current => 0)
@@ -38,8 +38,8 @@ export default function HomeScreen({navigation}) {
   }
   const Finish = () => {
     Alert.alert(
-    'Time is up',
-    'Your final score is ' + score + ' with accuracy ' + acc + ', your clicks per second is ' + cps,
+    (route.params > 0) ? 'Time is up' : 'Notice',
+    (route.params > 0) ? 'Your final score is ' + score + ' with accuracy ' + acc + ', your clicks per second is ' + cps : 'Please enter a valid number!',
     [   
            {text: 'Return to menu', onPress: () => navigation.popToTop()},
     ]   
