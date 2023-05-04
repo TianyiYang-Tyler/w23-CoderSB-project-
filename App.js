@@ -1,5 +1,8 @@
 import HomeScreen from "./screens/HomeScreen";
 import Game from "./screens/Game";
+import EasterEgg from "./screens/EasterEgg";
+import Credits from "./screens/Credits";
+import Settings from "./screens/Settings";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 const Stack = createNativeStackNavigator();
@@ -38,6 +41,9 @@ export default class App extends React.Component {
           <Stack.Navigator>
             <Stack.Screen name="Home" component={HomeScreen} />
             <Stack.Screen name="Game" component={Game} />
+	    <Stack.Screen name="Settings" component={Settings} />
+	    <Stack.Screen name="Credits" component={Credits} />
+	    <Stack.Screen name="EasterEgg" component={EasterEgg} />
           </Stack.Navigator>
         </NavigationContainer>
   );

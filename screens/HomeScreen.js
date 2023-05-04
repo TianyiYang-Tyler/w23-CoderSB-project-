@@ -1,19 +1,25 @@
 import { StatusBar } from "expo-status-bar";
 import { useState } from "react";
-import { Button, StyleSheet, Text, View } from "react-native";
+import { Image, Button, StyleSheet, TouchableOpacity, Text, View } from "react-native";
 
 export default function HomeScreen({navigation}) {
+
+const Pic1 = () => { return( <Image style={styles.image} source={require('../pics/DreamIsSus.png')} />)};
+
+const Padding = () => { return (<View style={styles.appContainer}></View>)}
 
   return (
     <View style={styles.appContainer}>
       <View style={styles.ScreenTitle}>
-        <Text style={styles.TitleFormat}>Main Menu</Text>
+        <Text style={styles.TitleFormat}>Menu</Text>
       </View>
       <View style={styles.BottonContainer}>
         <Button title="Start Game" onPress={() => navigation.navigate("Game")} />
-        <Button title="Game Modes" />
-        <Button title="Personal Best" />
-        <Button title="Settings" />
+	<Padding /><Padding />
+        <Button title="Game Setting" onPress={() => navigation.navigate("Settings")}/>
+	<Padding /><Padding />
+        <Button title="Credits" onPress={() => navigation.navigate("Credits")}/>
+	<TouchableOpacity onPress={() => navigation.navigate("EasterEgg")}><Pic1 /></TouchableOpacity> 
       </View>
     </View>
   );
@@ -21,8 +27,8 @@ export default function HomeScreen({navigation}) {
 
 const styles = StyleSheet.create({
   appContainer: {
-    flex: 1,
-    padding: 50,
+    flex: 3,
+    padding: 20,
   },
   ScreenTitle: {
     flex: 1,
@@ -34,17 +40,24 @@ const styles = StyleSheet.create({
     textAlign: "center",
   },
   BottonContainer: {
-    flex: 5,
+    flex: 3,
     flexDirection: "column",
     justifyContent: "space-between",
     alignItems: "center",
-    padding: 110,
+    padding: 8, 
   },
   TitleFormat: {
-    fontSize: 20,
+    fontSize: 30,
     fontWeight: "bold",
     fontFamily: "Glametrix",
     padding: 10,
     margin: 10,
   },
+  image: {
+    flex: 5,
+    width: 60,
+    height: 20,
+    margin: 10,
+    resizeMode: 'contain'
+}
 });
